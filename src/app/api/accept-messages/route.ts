@@ -41,7 +41,7 @@ export async function POST(req:Request){
         }
 
         userInDb.isAcceptingMessage=isAcceptingMessage;
-        userInDb.save();
+        await userInDb.save();
         
         return Response.json({
             success:true,
