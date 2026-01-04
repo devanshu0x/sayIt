@@ -1,9 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-
 
 :root {
   --background: oklch(0.9821 0 0);
@@ -166,8 +165,3 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
-
-main{
-  padding: 16px;
-  margin: 0px;
-}

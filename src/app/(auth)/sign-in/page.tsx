@@ -13,6 +13,7 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { signInSchema } from "@/schemas/signInSchema";
+import { signIn } from "next-auth/react";
 
 export default function SignUpPage() {
  
@@ -30,17 +31,21 @@ export default function SignUpPage() {
 
   async function onSubmit(data: z.infer<typeof signInSchema>){
     setIsSubmitting(true);
-    try{
-      const response=await axios.post<ApiResponse>("/api/sign-in",data);
-      toast.success(response.data.message);
-      router.replace(`/dashboard`)
-    }catch(err){
-      console.error("Error in signing in ",err);
-      const axiosError= err as AxiosError<ApiResponse>
-      toast.error(axiosError.response?.data.message ?? "Error is signing in");
-    }finally{
+    
+      const response=await signIn("credentials",{
+        ...data,
+        redirect:false
+      });
+      if(response?.error){
+        toast.error(response.error);
+      }
+      else{
+        toast.success("Signed in successfully");
+        router.replace(`/dashboard`)
+      }
+    
       setIsSubmitting(false);
-    }
+    
   }
 
   return (

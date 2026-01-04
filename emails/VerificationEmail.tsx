@@ -11,7 +11,7 @@ export default function VerificationEmail({username,otp}:VerificationEmailProps)
         <Tailwind>
             <Html lang="en" dir="ltr">
                 <Head>
-                    <Text className="text-3xl font-extrabold text-blue-600">Verification Email</Text>
+                    <Text className="text-3xl text-center font-extrabold text-blue-600">Verification Email</Text>
                 </Head>
                 <Preview>Here is your verifiction code: {otp}</Preview>
                 <Section>

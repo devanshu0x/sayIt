@@ -89,8 +89,9 @@ export default function VerifyPage(){
                 </form>
             </CardContent>
             <CardFooter>
-                <Field orientation={"horizontal"}>
+                <Field orientation={"vertical"}>
                             <Button disabled={isSubmitting} type="submit" form="verify-form" className="w-full">Verify Account</Button>
+                            <Button onClick={()=>router.push("/sign-up")} variant={"secondary"} className="w-full">Try signing up again</Button>
                 </Field>
             </CardFooter>
 

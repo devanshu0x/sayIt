@@ -19,11 +19,11 @@ export async function POST(req:Request){
                 message:verifyCodeErrors.length>0? verifyCodeErrors.join(", "): "Invalid query parameter"
             },{status:400})
         }
-
+        
         const user=await UserModel.findOne({
             username:result.data.username
         })
-
+        
         if(!user){
             return Response.json({
                 success:false,
