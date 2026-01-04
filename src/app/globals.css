@@ -163,5 +163,18 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+
+  --animate-blink: blink 1s ease-in infinite alternate;
+}
+
+
+@keyframes blink{
+  0%{
+    opacity:0.5;
+  }
+  100%{
+    opacity: 0.3;
+  }
+
 }
 

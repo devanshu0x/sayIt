@@ -1,33 +1,33 @@
-import { Button } from "../ui/button";
+import { SuperShinyButton } from "../ui/superShinyButton";
 
 export const Hero = () => {
   return (
     <section
       id="hero"
-      className="py-24 sm:py-32 px-6 sm:px-12 text-center"
+      className="py-24 sm:py-32 px-6 sm:px-12 text-center overflow-x-clip relative"
     >
-    <div className="absolute h-32 w-32 top-10 bg-primary rounded-full blur-3xl" />
-      <div >
+      
         <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold uppercase text-primary tracking-tight">
           Say
           <span className="text-secondary">
             It
           </span>
         </h1>
-      </div>
+      
 
-      <p className="mt-6 text-lg sm:text-xl max-w-md mx-auto text-secondary-foreground leading-relaxed">
-        Where feedback stays honest and anonymous
+      <p className="mt-6 text-lg sm:text-xl md:text-2xl max-w-md mx-auto leading-relaxed text-secondary-foreground ">
+        Collect honest, anonymous feedback from people who matter.
       </p>
-
-      <div className="flex justify-center gap-4 mt-10">
-        <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold">
-          Get Started
-        </button>
-        <button className="bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-semibold">
-          Learn More
-        </button>
+      <div className="mt-16">
+        <SuperShinyButton>Dashboard</SuperShinyButton>
       </div>
+
+      {/* Floating objects */}
+      <div className="absolute h-32 w-32 top-10 bg-secondary/50 rounded-full blur-3xl -z-2 " />
+      <div className="absolute h-72 w-72 top-60 -right-20 bg-secondary/30 rounded-full blur-3xl -z-2" />
+      {/* <img src="/bottle.png" className=" h-60 absolute top-40 left-50 -rotate-10" /> */}
+      <img src={"/arrow-bl.svg"} className="absolute bottom-0 left-0 h-60 hidden md:block -z-1 opacity-50 animate-blink" />
+      <img src={"/arrow-tr.svg"} className="absolute top-0 right-0 h-60 hidden md:block -z-1 opacity-50 animate-blink" />
     </section>
   );
 };
