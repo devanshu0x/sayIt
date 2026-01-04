@@ -81,14 +81,14 @@ function Page() {
   }
 
   return (
-    <main>
-      <div>
+    <main className="min-h-screen flex items-center justify-center bg-primary">
+      
         <Card className="w-full sm:max-w-md">
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="text-center text-primary text-2xl">
               Sign Up
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-center">
               Sign up with your details to continue
             </CardDescription>
           </CardHeader>
@@ -111,7 +111,7 @@ function Page() {
                           {
                             fieldState.invalid ? (
                               <FieldError errors={[fieldState.error]} />
-                            ): !isCheckingUsername && (
+                            ): (!isCheckingUsername && usernamMessage!=="")&& (
                               <span className={(isUsernameUnique? "text-green-400 text-sm": "text-red-400 text-sm")}>{usernamMessage}</span>
 
                             )
@@ -161,14 +161,20 @@ function Page() {
                 </FieldGroup>
             </form>
           </CardContent>
-          <CardFooter>
-            <Field orientation={"horizontal"}>
+          <CardFooter className="flex flex-col gap-4">
+            <Field orientation={"horizontal"} className="">
                   <Button type="button" variant={"outline"} onClick={()=>form.reset()} >Reset</Button>
                   <Button disabled={isSubmitting || isCheckingUsername || !isUsernameUnique} type="submit" form="sign-up-form" >Submit</Button>
             </Field>
+            
+              <div className="flex flex-row justify-center items-center">
+                <span className="text-sm">Already a member?</span>
+              <Button variant={"link"} onClick={()=>router.push("/sign-in")}>Sign In</Button>
+              </div>
+            
           </CardFooter>
         </Card>
-      </div>
+     
     </main>
   )
 }
