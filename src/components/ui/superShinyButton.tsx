@@ -1,11 +1,15 @@
+"use client"
+
+import { useRouter } from "next/navigation";
+
 
 interface SuperShinyButtonProps{
     children?:React.ReactNode;
-    onClick?: ()=>void;
 }
 
-export function SuperShinyButton({children,onClick}:SuperShinyButtonProps){
-    return <button onClick={onClick} className="px-10 py-3 bg-red-500">
+export function SuperShinyButton({children}:SuperShinyButtonProps){
+    const router=useRouter();
+    return <button onClick={()=>router.push("/dashboard")} className="px-10 py-3 bg-secondary hover:bg-primary text-secondary-foreground hover:text-primary-foreground shadow-primary/50 shadow-lg hover:cursor-pointer hover:shadow-2xl rounded-lg text-secondary-foreground font-bold transition-all duration-400 ">
         {children}
     </button>
 }
