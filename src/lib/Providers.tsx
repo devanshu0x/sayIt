@@ -12,7 +12,7 @@ export function Providers({children}:ProvidersProps){
     return(
         <SessionProvider>
             {children}
-            <Toaster/>
+            <Toaster position="top-center" />
         </SessionProvider>
     )
 }

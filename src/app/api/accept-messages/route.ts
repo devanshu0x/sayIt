@@ -17,9 +17,10 @@ export async function POST(req:Request){
             },{status:401})
         }
         const userId= user._id;
-        const {isAcceptingMessage}= await req.json();
+        const body= await req.json();
 
-        const result= acceptMeassageSchema.safeParse(isAcceptingMessage);
+        const result= acceptMeassageSchema.safeParse(body);
+        
         if(!result.success){
             const err= result.error.format()._errors || [];
             return Response.json({
@@ -28,6 +29,7 @@ export async function POST(req:Request){
 
             },{status:400})
         }
+        const {isAcceptingMessage}=result.data;
 
         const userInDb=await UserModel.findOne({
             _id:userId
