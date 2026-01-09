@@ -37,14 +37,14 @@ export function Messages(){
     },[])
     return (
         <section id="#messages">
-            <div className="flex justify-end">
+            <div className="flex justify-end mb-4">
                 <Button onClick={async ()=> await fetchMessages()}>
                     {
                         loadingMessage? <Loader2 className="animate-spin h-4 w-4" />: <RefreshCcw className="h-4 w-4"/>
                     }
                 </Button>
             </div>
-            <div className="grid col-span-1 sm:col-span-2 md:col-span-3 gap-x-2 gap-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-2">
                     {
                         messages.map((message,ind)=>(
                             <MessageCard key={ind} message={message} removeMessage={removeMessage} />

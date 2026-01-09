@@ -3,7 +3,7 @@ import { generateText } from "ai";
 
 export const runtime = "edge";
 
-export async function POST(req:Request){
+export async function GET(req:Request){
     try{
         const response= await generateText({
             model:geminiModel,
