@@ -9,7 +9,7 @@ export const Hero = () => {
       
         <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold uppercase text-primary tracking-tight">
           Say
-          <span className="text-secondary">
+          <span className="text-secondary-foreground">
             It
           </span>
         </h1>

@@ -4,15 +4,15 @@ import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/user";
 
 interface DeleteMessageParams{
-    params:{
+    params:Promise<{
         messageId:string;
-    }
+    }>
 }
 
 export async function DELETE(req:Request,{params}:DeleteMessageParams) {
     const session=await getServerSession(authOptions);
     const user= session?.user;
-    const {messageId}=params;
+    const {messageId}=await params;
     await dbConnect();
     if(!session || !user){
         return Response.json({
