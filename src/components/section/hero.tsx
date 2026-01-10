@@ -7,9 +7,9 @@ export const Hero = () => {
       className="py-24 sm:py-32 px-6 sm:px-12 text-center overflow-x-clip relative"
     >
       
-        <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold uppercase text-primary tracking-tight">
+        <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold uppercase text-indigo-500 tracking-tight">
           Say
-          <span className="text-secondary-foreground">
+          <span className="text-white">
             It
           </span>
         </h1>
@@ -23,11 +23,9 @@ export const Hero = () => {
       </div>
 
       {/* Floating objects */}
-      <div className="absolute h-42 w-42 top-10 bg-secondary/50 rounded-full blur-3xl -z-2 " />
-      <div className="absolute h-72 w-72 top-60 -right-20 bg-secondary/30 rounded-full blur-3xl -z-2" />
-      {/* <img src="/bottle.png" className=" h-60 absolute top-40 left-50 -rotate-10" /> */}
-      {/* <img src={"/arrow-bl.svg"} className="absolute bottom-0 left-0 h-60 hidden md:block -z-1 opacity-50 animate-blink" />
-      <img src={"/arrow-tr.svg"} className="absolute top-0 right-0 h-60 hidden md:block -z-1 opacity-50 animate-blink" /> */}
+      <div className="absolute h-42 w-42 top-10 bg-indigo-500/50 rounded-full blur-3xl -z-2 " />
+      <div className="absolute h-72 w-72 top-60 -right-20 bg-indigo-500/40 rounded-full blur-3xl -z-2" />
+      
     </section>
   );
 };

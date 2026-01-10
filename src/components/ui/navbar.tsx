@@ -20,7 +20,7 @@ export const Navbar= ()=>{
     }
     return <div className="bg-accent/30 fixed top-0 left-0 right-0 z-10 backdrop-blur-md px-4 sm:px-6 py-2 border-b border-border">
         <nav className="flex justify-between items-center bg-transparent">
-        <span onClick={()=>router.push("/dashboard")} className="text-2xl font-extrabold text-primary tracking-wide cursor-pointer">SAY<span className="text-secondary">IT</span></span>
+        <span onClick={()=>router.push("/dashboard")} className="text-2xl font-extrabold text-indigo-500 tracking-wide cursor-pointer">SAY<span className="text-white">IT</span></span>
         <div className="hidden sm:flex items-center gap-4">
             <a href="https://github.com/devanshu0x" target="_blank"><img src="/github.svg" className="h-9 hover:cursor-pointer" /></a>
             <Dialog open={open} onOpenChange={setOpen} >
